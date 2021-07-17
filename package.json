@@ -1,0 +1,29 @@
+{
+  "name": "mongo-rest-api",
+  "version": "1.0.0",
+  "description": "rest api built with mongo db",
+  "main": "app.js",
+  "scripts": {
+    "start" : "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kojoYeboah53i/mongo-rest-api.git"
+  },
+  "keywords": [
+    "mongo",
+    "db",
+    "rest",
+    "api"
+  ],
+  "author": "Isaac Yeboah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kojoYeboah53i/mongo-rest-api/issues"
+  },
+  "homepage": "https://github.com/kojoYeboah53i/mongo-rest-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
