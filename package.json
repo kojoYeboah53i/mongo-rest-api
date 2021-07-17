@@ -4,7 +4,7 @@
   "description": "rest api built with mongo db",
   "main": "app.js",
   "scripts": {
-    "start" : "nodemon app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/kojoYeboah53i/mongo-rest-api#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "mongoose": "^5.13.3",
     "nodemon": "^2.0.12"
   }
 }
