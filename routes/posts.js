@@ -3,12 +3,12 @@ const express = require('express');
 const router = express.Router();
 
 //get index route
-app.get('/', (req, res) =>{
+router.get('/', (req, res) =>{
  //   res.sendFile(__dirname + '/index.html');
         res.send("live ...")
  })
 
-app.get('/posts', (req, res) => {
+router.get('/theposts', (req, res) => {
     res.send("posts ...")
 })
 
