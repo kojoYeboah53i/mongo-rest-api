@@ -5,8 +5,11 @@ const port = process.env.PORT || 5000;
 const { MongoClient }  = require('mongodb');
 require('dotenv').config();
 
+// import the routes
+const routes = require('./routes/posts');
 
-
+//use routes
+app.use('/testpost', routes);
 
 //connect to mongodb
 const uri = process.env.DB_CONNECTION;
