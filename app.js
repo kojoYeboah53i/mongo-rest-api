@@ -8,7 +8,7 @@ require('dotenv').config();
 // import the routes
 const routes = require('./routes/posts');
 
-//use routes
+//middleware
 app.use('/', routes);
 
 //connect to mongodb
