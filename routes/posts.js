@@ -12,10 +12,13 @@ router.get('/', (req, res) =>{
 
 //save post
 router.post('/save', (req, res) =>{
-    const post = new Post(req.body);
+    const post = new Post({
+        title: req.body.title,
+        description: req.body.description});
+        
     post.save()
-        .then(post => res.status(200).json(post))
-        .catch(err => res.status(500).send(err) => console.log(err));
+        .then(data => res.status(200).json(data))
+        .catch(err => res.status(500).send(err), () => console.log(err));
 });
 
 

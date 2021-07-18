@@ -1,18 +1,21 @@
 //require express
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 7000;
 const { MongoClient }  = require('mongodb');
 const bodyParser = require('body-parser');
 require('dotenv').config();
+//require path
+const path = require('path');
 
-//use bodyparser
+
+// use bodyparser
 app.use(bodyParser.json());
 
 // import the routes
 const routes = require('./routes/posts');
 
-//middleware
+// middleware
 app.use('/', routes);
 
 //connect to mongodb
@@ -28,6 +31,13 @@ client.connect(err => {
 });
 
 
+app.use( express.static(path.join(__dirname, 'public')))
+
+app.get('/page', (req, res) => {
+
+    res.sendFile(path.join(__dirname + '/index.html'));
+ 
+})
 
 
 
