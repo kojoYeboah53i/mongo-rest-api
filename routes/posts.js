@@ -1,6 +1,7 @@
 //require express
 const express = require('express');
 const router = express.Router();
+const posts = require('../models/Post');
 
 //get index route
 router.get('/', (req, res) =>{
