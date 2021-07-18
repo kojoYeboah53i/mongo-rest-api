@@ -2,9 +2,8 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
-
-//require mongoose
 const { MongoClient }  = require('mongodb');
+require('dotenv').config();
 
 
 //get index route
@@ -14,10 +13,8 @@ app.get('/', (req, res) =>{
 })
 
 //connect to mongodb
-// mongoose.connect('mongodb://localhost:27017/test');
-const uri = "";
+const uri = process.env.DB_CONNECTION;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
 
 client.connect(err => {
   const collection = client.db("test").collection("devices");
@@ -26,6 +23,9 @@ client.connect(err => {
   // perform actions on the collection object
   client.close();
 });
+
+
+
 
 
 //app listener
