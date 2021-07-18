@@ -1,5 +1,6 @@
 //document ready
 $(document).ready(function(){
-    alert("hello");
+    // alert("hello");
+    console.log("jquery is working");
 
 });
