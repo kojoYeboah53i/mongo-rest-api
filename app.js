@@ -9,7 +9,7 @@ require('dotenv').config();
 const routes = require('./routes/posts');
 
 //use routes
-app.use('/testpost', routes);
+app.use('/', routes);
 
 //connect to mongodb
 const uri = process.env.DB_CONNECTION;
