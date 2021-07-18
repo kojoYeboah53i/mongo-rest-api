@@ -8,15 +8,18 @@ router.get('/', (req, res) =>{
  //   res.sendFile(__dirname + '/index.html'); 
         res.send("live ...")
  })
-//post route
-router.post('/', (req, res) =>{
-    // console.log(req.body);
-    const title = req.body.title;
-    const description = req.body.description;
-    Post.create(title, description)
+
+
+//save post
+router.post('/save', (req, res) =>{
+    const post = new Post(req.body);
+    post.save()
         .then(post => res.status(200).json(post))
-        .catch(err => res.status(500).send(err));
+        .catch(err => res.status(500).send(err) => console.log(err));
 });
+
+
+
 
 router.get('/theposts', (req, res) => {
     res.send("posts ...")
@@ -25,4 +28,4 @@ router.get('/theposts', (req, res) => {
 
 
  //module exports 
-module.exports = router;
+module.exports = router; 
