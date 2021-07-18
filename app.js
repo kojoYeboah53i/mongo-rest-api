@@ -3,7 +3,11 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 const { MongoClient }  = require('mongodb');
+const bodyParser = require('body-parser');
 require('dotenv').config();
+
+//use bodyparser
+app.use(bodyParser.json());
 
 // import the routes
 const routes = require('./routes/posts');
