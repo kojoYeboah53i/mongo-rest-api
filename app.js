@@ -15,7 +15,7 @@ app.get('/', (req, res) =>{
 
 //connect to mongodb
 // mongoose.connect('mongodb://localhost:27017/test');
-const uri = "mongodb+srv://kojoyeboah53i:<password>@cluster0.2fm1y.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
