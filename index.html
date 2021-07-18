@@ -8,7 +8,8 @@
     <meta name="author" content="Isaac Kojo Yeboah">
     <title>Basic CRUD Implementation of MongoDB</title>
     <link rel="shortcut icon" href="apple-touch-icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -49,6 +50,7 @@
              <th>Age</th>
              <th>Marks%</th>
              <th>Status</th>
+             <th>Active</th>
         </thead>
         <tbody>
               <tr>
@@ -57,6 +59,10 @@
                     <td data-label="Age">34</td>
                     <td data-label="Marks%">50%</td>
                     <td data-label="Staus">Passed</td>
+                    <td data-label="Action">
+                        <a href="#"><button  id="edit" class="edit btn btn-sm btn-warning">Edit</button></a>
+                        <a href="#"><button  id="delete" class="edit btn btn-sm btn-danger">Delete</button></a>
+                    </td>
               </tr>
    
               <tr>
@@ -65,6 +71,10 @@
                     <td data-label="Age">23</td>
                     <td data-label="Marks%">70%</td>
                     <td data-label="Staus">Passed</td>
+                    <td data-label="Action">
+                        <a href="#"><button  id="edit" class="edit btn btn-sm btn-warning">Edit</button></a>
+                        <a href="#"><button  id="delete" class="edit btn btn-sm btn-danger">Delete</button></a>
+                    </td>
               </tr>
    
               <tr>
@@ -73,6 +83,10 @@
                     <td data-label="Age">20</td>
                     <td data-label="Marks%">90%</td>
                     <td data-label="Staus">Passed</td>
+                    <td data-label="Action">
+                        <a href="#"><button  id="edit" class="edit btn btn-sm btn-warning">Edit</button></a>
+                        <a href="#"><button  id="delete" class="edit btn btn-sm btn-danger">Delete</button></a>
+                    </td>
               </tr>
    
               <tr>
@@ -82,15 +96,22 @@
                     <td data-label="Marks%">30%</td>
                     <td data-label="Staus">Failed</td>
                     <td data-label="Action">
-                        <a href="#"><button  id="edit" class="edit btn btn-warning">Edit</button></a>
-                        <a href="#"><button  id="delete" class="edit btn btn-danger">Delete</button></a>
+                        <a href="#"><button  id="edit" class="edit btn btn-sm btn-warning">Edit</button></a>
+                        <a href="#"><button  id="delete" class="edit btn btn-sm btn-danger">Delete</button></a>
                     </td>
 
               </tr>
         </tbody>
       </table>
-   
+
+      <style>
+          .Action {
+              display: inline-block;
+          }
+      </style>
     <script src="js/jquery.min.js"></script>
     <script src="frontend.js"></script>
 </body>
 </html>
+
+<!-- https://www.youtube.com/watch?v=vgEVfaDmfTk -->
