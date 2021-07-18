@@ -7,32 +7,23 @@
     <meta name="description" content="basic crud implementation of MongoBD">
     <meta name="author" content="Isaac Kojo Yeboah">
     <title>Basic CRUD Implementation of MongoDB</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="apple-touch-icon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
+<body>
+
 <nav>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+     
                 <a class="navbar-brand" href="#">
                     <div class="logo"><img src="./logo.png" alt="" sizes="" srcset=""></div>
                 </a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
+
         </div>
     </div>
 </nav>
@@ -43,19 +34,57 @@
             <p>
                 This is a basic CRUD implementation of MongoDB using PHP and Bootstrap.
             </p>
-            <p>
-                <a class="btn btn-primary" href="#">Back to Index</a>
-            </p>
+         
         </div>
     </div>
 </div>
 
-</div>
-</nav>
-<div class="container">
-    <img src="laser.jpg" alt="laser" id="laser" srcset="">
-</div>
-<body>
+
+
+
+    <table class="table">
+        <thead>
+             <th>S.No</th>
+             <th>Name</th>
+             <th>Age</th>
+             <th>Marks%</th>
+             <th>Status</th>
+        </thead>
+        <tbody>
+              <tr>
+                    <td data-label="S.No">1</td>
+                    <td data-label="Name">Dinesh</td>
+                    <td data-label="Age">34</td>
+                    <td data-label="Marks%">50%</td>
+                    <td data-label="Staus">Passed</td>
+              </tr>
+   
+              <tr>
+                    <td data-label="S.No">2</td>
+                    <td data-label="Name">Kamal</td>
+                    <td data-label="Age">23</td>
+                    <td data-label="Marks%">70%</td>
+                    <td data-label="Staus">Passed</td>
+              </tr>
+   
+              <tr>
+                    <td data-label="S.No">3</td>
+                    <td data-label="Name">Neha</td>
+                    <td data-label="Age">20</td>
+                    <td data-label="Marks%">90%</td>
+                    <td data-label="Staus">Passed</td>
+              </tr>
+   
+              <tr>
+                    <td data-label="S.No">4</td>
+                    <td data-label="Name">Priya</td>
+                    <td data-label="Age">30</td>
+                    <td data-label="Marks%">30%</td>
+                    <td data-label="Staus">Failed</td>
+              </tr>
+        </tbody>
+      </table>
+   
     <script src="js/jquery.min.js"></script>
     <script src="frontend.js"></script>
 </body>
