@@ -10,13 +10,12 @@ router.get('/', (req, res) =>{
  })
 //post route
 router.post('/', (req, res) =>{
-    console.log(req.body);
-    // const title = req.body.title;
-    // const content = req.body.content;
-    // const userId = req.user._id;
-    // posts.create(title, content, userId)
-    //     .then(post => res.json(post))
-    //     .catch(err => res.status(500).send(err));
+    // console.log(req.body);
+    const title = req.body.title;
+    const description = req.body.description;
+    Post.create(title, description)
+        .then(post => res.status(200).json(post))
+        .catch(err => res.status(500).send(err));
 });
 
 router.get('/theposts', (req, res) => {
