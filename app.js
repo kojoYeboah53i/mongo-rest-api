@@ -6,11 +6,7 @@ const { MongoClient }  = require('mongodb');
 require('dotenv').config();
 
 
-//get index route
-app.get('/', (req, res) =>{
-//   res.sendFile(__dirname + '/index.html');
-    res.send("live ...")
-})
+
 
 //connect to mongodb
 const uri = process.env.DB_CONNECTION;
