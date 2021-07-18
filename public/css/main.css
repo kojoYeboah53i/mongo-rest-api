@@ -25,4 +25,14 @@ body{
     margin: auto;
     max-width: 100px;
 }
+
+#laser{
+    width: 300px;
+    height: auto;
+    margin: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+    
+}
  
