@@ -23,11 +23,11 @@ const uri = process.env.DB_CONNECTION;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect(err => {
-  const collection = client.db("test").collection("devices");
+  // const collection = client.db("test").collection("devices");
   console.log('Connected successfully to database');
 
   // perform actions on the collection object
-  client.close();
+ // client.close();
 });
 
 
