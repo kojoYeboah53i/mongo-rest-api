@@ -10,32 +10,22 @@ require('dotenv').config();
 const path = require('path');
 
 
+
+//##### middlewares begin
+
 // use bodyparser
 app.use(bodyParser.json());
+
+//cors
+app.use(cors());
 
 // import the routes
 const routes = require('./routes/posts');
 
-// middleware
+// routes
 app.use('/', routes);
 
-
-
-
-// app.use( express.static(path.join(__dirname, 'public')))
-
-// app.get('/page', (req, res) => {
-
-//     res.sendFile(path.join(__dirname + '/index.html'));
- 
-// })
-
-
-
-//app listener
-// const listenApp = app.listen(port, () => {
-//   console.log(`Server listening on port ${port}`);
-// })
+//######### middlewares end
 
 
 
