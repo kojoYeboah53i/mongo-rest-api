@@ -67,7 +67,8 @@ router.get('/posts/:postId', async (req, res) =>{
     }
 })
 
-router.get('/theposts', (req, res) => {
+//delete post
+router.delete('/posts/:postId', (req, res) => {
     res.send("posts ...")
 })
 
