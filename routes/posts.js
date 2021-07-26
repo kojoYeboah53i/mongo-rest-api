@@ -1,3 +1,12 @@
+/************************************
+ *  ok note this is a comment
+ *  for some wierd reason i have to start the url with posts
+ *  before the request works, I don't know why yet 
+ *  the initial get request must begin with some work perhaps "api"
+ *  in this case it is posts, but once u set the first get request with 
+ *  the specific word, all other requests must begin with the same word 
+ * *******************************/
+
 //require express
 const express = require('express');
 const router = express.Router();
@@ -15,6 +24,7 @@ router.get('/posts',  async (req, res) =>{
  })
 
  //async post route
+
 
 
  //saved post async
