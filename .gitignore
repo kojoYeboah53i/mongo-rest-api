@@ -76,3 +76,5 @@ typings/
 .fusebox/
 db.js
 .db.js
+
+public/
