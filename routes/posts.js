@@ -6,7 +6,12 @@ const Post = require('../models/post');
 //get index route
 router.get('/',  async (req, res) =>{
  //   res.sendFile(__dirname + '/index.html'); 
-        res.send("live ...")
+      try {
+        const posts = await Post.find({});
+        res.json(posts);
+      } catch(err){
+        res.json({message: err});
+    }
  })
 
  //async post route
@@ -22,7 +27,7 @@ router.get('/',  async (req, res) =>{
                 title: req.body.title,
                 content: req.body.content,
                 description: req.body.description
-            });
+    })
 
      try{
         const savedPost = await post.save();
