@@ -4,7 +4,7 @@ const router = express.Router();
 const Post = require('../models/post');
 
 //get index route
-router.get('/',  async (req, res) =>{
+router.get('/posts',  async (req, res) =>{
  //   res.sendFile(__dirname + '/index.html'); 
       try {
         const posts = await Post.find({});
@@ -57,15 +57,15 @@ router.post('/save', (req, res) =>{
 });
 
 
-
-
 //get data from post
-router.get('/:id', (req, res) =>{
-    Post.findById(req.params.id)
-        .then(data => res.status(200).json(data))
-        .catch(err => res.status(500).send(err), () => console.log(err));
-});
-
+router.get('/posts/:postId', async (req, res) =>{
+    try {
+        const post = await Post.findById(req.params.postId);
+        res.json(post);
+    } catch(err){
+        res.json({message: err});
+    }
+})
 
 router.get('/theposts', (req, res) => {
     res.send("posts ...")
