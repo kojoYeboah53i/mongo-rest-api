@@ -2,7 +2,8 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 6000;
-const { MongoClient }  = require('mongodb');
+// const { MongoClient }  = require('mongodb');
+const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 //require path
@@ -32,20 +33,24 @@ app.get('/page', (req, res) => {
 
 
 //app listener
-const listenApp = app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-})
+// const listenApp = app.listen(port, () => {
+//   console.log(`Server listening on port ${port}`);
+// })
 
 
-//connect to mongodb
-const uri = process.env.DB_CONNECTION;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-client.connect(err => {
-  // const collection = client.db("test").collection("devices");
-  console.log('Connected successfully to database');
+const dbURL = process.env.DB_CONNECTION;
+//connect to the database
+mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => {
+        console.log('Connection to database successful');
+        app.listen(port, () => {
+            console.log(`Server listening on port ${port}`);
+          })
+    })
+    .catch((err) => {
+        console.log('Error connecting to database');
+        console.log(err);
+    })
 
-  // perform actions on the collection object
- // client.close();
-});
 
