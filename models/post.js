@@ -10,12 +10,11 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    date: {
-        type: Date,
-        defuault: Date.now
+    content: {
+        type: String,
+        required: true
     }
+}, {timestamps: true }
+);
 
-
-});
-
-module.exports = mongoose.model('Post', PostSchema);
+module.exports = mongoose.model('PostData', PostSchema);

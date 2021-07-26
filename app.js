@@ -1,7 +1,7 @@
 //require express
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 7000;
+const port = process.env.PORT || 6000;
 const { MongoClient }  = require('mongodb');
 const bodyParser = require('body-parser');
 require('dotenv').config();
@@ -18,6 +18,25 @@ const routes = require('./routes/posts');
 // middleware
 app.use('/', routes);
 
+
+
+
+// app.use( express.static(path.join(__dirname, 'public')))
+
+app.get('/page', (req, res) => {
+
+    res.sendFile(path.join(__dirname + '/index.html'));
+ 
+})
+
+
+
+//app listener
+const listenApp = app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+})
+
+
 //connect to mongodb
 const uri = process.env.DB_CONNECTION;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -29,21 +48,4 @@ client.connect(err => {
   // perform actions on the collection object
  // client.close();
 });
-
-
-app.use( express.static(path.join(__dirname, 'public')))
-
-app.get('/page', (req, res) => {
-
-    res.sendFile(path.join(__dirname + '/index.html'));
- 
-})
-
-
-
-//app listener
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-})
-
 
