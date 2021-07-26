@@ -19,10 +19,7 @@ router.get('/posts',  async (req, res) =>{
 
  //saved post async
  router.post('/async', async (req, res) =>{
-    //  let post = new Post();
-    //  post.title = req.body.title;
-    //  post.content = req.body.content;
-    //  post.description = req.body.description;
+
     const post = new Post({
                 title: req.body.title,
                 content: req.body.content,
@@ -78,6 +75,19 @@ router.delete('/posts/:postId', async (req, res) => {
 
 })
 
+//update post
+router.patch('/posts/:postId', async (req, res) => {
+    try {
+        const updatePost = await Post.updateOne(
+            {_id: req.params.postId}, 
+            {$set: { title: req.body.title}}
+            )
+        
+            res.json(updatePost) 
+    } catch(err){
+        res.json({message: err});
+    }
+})  
 
 
  //module exports 
