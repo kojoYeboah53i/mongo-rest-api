@@ -24,11 +24,11 @@ app.use('/', routes);
 
 // app.use( express.static(path.join(__dirname, 'public')))
 
-app.get('/page', (req, res) => {
+// app.get('/page', (req, res) => {
 
-    res.sendFile(path.join(__dirname + '/index.html'));
+//     res.sendFile(path.join(__dirname + '/index.html'));
  
-})
+// })
 
 
 

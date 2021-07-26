@@ -4,11 +4,34 @@ const router = express.Router();
 const Post = require('../models/post');
 
 //get index route
-router.get('/', (req, res) =>{
+router.get('/',  async (req, res) =>{
  //   res.sendFile(__dirname + '/index.html'); 
         res.send("live ...")
  })
 
+ //async post route
+
+
+ //saved post async
+ router.post('/async', async (req, res) =>{
+    //  let post = new Post();
+    //  post.title = req.body.title;
+    //  post.content = req.body.content;
+    //  post.description = req.body.description;
+    const post = new Post({
+                title: req.body.title,
+                content: req.body.content,
+                description: req.body.description
+            });
+
+     try{
+        const savedPost = await post.save();
+         res.json(savedPost);
+     } catch(err){
+         res.json({message: err});
+     }
+
+ });
 
 //save post
 router.post('/save', (req, res) =>{
@@ -27,6 +50,9 @@ router.post('/save', (req, res) =>{
         console.log(err);
     });
 });
+
+
+
 
 //get data from post
 router.get('/:id', (req, res) =>{
