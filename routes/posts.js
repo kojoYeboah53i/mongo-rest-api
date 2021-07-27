@@ -1,8 +1,8 @@
 /************************************
- *  ok note this is a comment
- *  for some wierd reason i have to start the url with posts
+ *  ok note this comment
+ *  for some weird reason i have to prefix the url with posts
  *  before the request works, I don't know why yet 
- *  the initial get request must begin with some work perhaps "api"
+ *  the initial get request must begin with some word perhaps "api"
  *  in this case it is posts, but once u set the first get request with 
  *  the specific word, all other requests must begin with the same word 
  * *******************************/
@@ -14,7 +14,6 @@ const Post = require('../models/post');
 
 //get index route
 router.get('/posts',  async (req, res) =>{
- //   res.sendFile(__dirname + '/index.html'); 
       try {
         const posts = await Post.find({});
         res.json(posts);
@@ -22,9 +21,6 @@ router.get('/posts',  async (req, res) =>{
         res.json({message: err});
     }
  })
-
- //async post route
-
 
 
  //saved post async
