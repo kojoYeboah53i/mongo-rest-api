@@ -1,7 +1,5 @@
-[![downloads](https://img.shields.io/github/last-commit/kojoyeboah53i/mongo-rest-api?logo=github&style=for-the-badge)]
-[![devDependency Status](https://david-dm.org/socketio/socket.io/dev-status.svg)](https://david-dm.org/socketio/socket.io#info=devDependencies)
-[![NPM version](https://badge.fury.io/js/socket.io.svg)](https://www.npmjs.com/package/socket.io)
-[![](https://img.shields.io/github/forks/kojoyeboah53i/mongo-rest-api?logo=github&style=for-the-badge)]
+![downloads](https://img.shields.io/github/last-commit/kojoyeboah53i/mongo-rest-api?logo=github&style=for-the-badge)
+![](https://img.shields.io/github/forks/kojoyeboah53i/mongo-rest-api?logo=github&style=for-the-badge)
 ## installation
    -clone this repository
 ```bash
