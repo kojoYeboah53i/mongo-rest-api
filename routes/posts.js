@@ -5,12 +5,15 @@
  *  the initial get request must begin with some word perhaps "api"
  *  in this case it is posts, but once u set the first get request with 
  *  the specific word, all other requests must begin with the same word 
+ * 
  * *******************************/
 
 //require express
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/post');
+
+
 
 //get index route
 router.get('/posts',  async (req, res) =>{
